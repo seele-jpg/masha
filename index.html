@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>С днём рождения любимая машенька ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- МУЗЫКА -->
+    <audio id="music" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- ПЛАВАЮЩИЕ СЕРДЕЧКИ И ЗВЁЗДОЧКИ -->
+    <div id="particles"></div>
+
+
+    <!-- ПЕРВЫЙ ЭКРАН -->
+    <section class="hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                Я ПОЗДРАВЛЯЮ ТЕБЯ С ДНЕМ РОЖДЕНИЯ
+            </p>
+
+            <h1>
+                С днём рождения,
+                <span>любимая</span> ❤️
+            </h1>
+
+            <p class="hero-subtitle">
+                этот сайт запечетлит наши моменты
+            </p>
+
+            <button id="startButton" class="main-button">
+                Открыть ❤️
+            </button>
+
+        </div>
+
+        <div class="scroll-hint">
+            ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- ОСНОВНОЙ САЙТ -->
+    <main id="mainContent">
+
+
+        <!-- 01 -->
+        <section class="text-section">
+
+            <div class="section-number">
+                01 / для моей любимой девочки
+            </div>
+
+            <h2>
+                сегодня тебе 18 лет
+            </h2>
+
+            <p>
+                я люблю тебя очень сильно машунь
+                спасибо тебе что мы снова общаемся
+            </p>
+
+            <p>
+                спасибо тебе большое машунь за все
+                ты моя самая лучшая и самая прекрасная девочка
+                спасибо что мы снова вместе,что мы снова общаемся
+                я благодарен тебе за каждое слово сказанное в мою сторону
+                я рад что мы с тобой в отношениях и любим друг друга
+                ты самая лучшая,самая красивая,самая милая,самая прекрасная
+                ты самая любимая девочка,самая чудесная,мое чудо любимое
+                и навечно я тебя буду защищать мой любимый ангелочек
+            </p>
+
+        </section>
+
+
+
+        <!-- 02 ЧАТЫ -->
+        <section class="gallery-section">
+
+            <div class="section-number">
+                02 / НАШИ МОМЕНТЫ ИЗ ЧАТОВ
+            </div>
+
+            <h2>
+                то,что я никогда не забуду
+                и буду хранить навеки в своем сердце
+                и оберегать,как ланая оберегает тайны скрытого храма
+            </h2>
+
+            <div class="gallery">
+
+                <div class="image-wrapper">
+
+                    <img
+                        id="chatImage"
+                        src="Чаты/chat1.jpg"
+                        alt="Наши разговоры"
+                    >
+
+                </div>
+
+                <div class="gallery-info">
+                    <span id="chatCounter">
+                        01 / 19
+                    </span>
+                </div>
+
+                <div class="gallery-controls">
+
+                    <button onclick="previousPhoto('chat')">
+                        ←
+                    </button>
+
+                    <div id="chatDots" class="dots"></div>
+
+                    <button onclick="nextPhoto('chat')">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ЦИТАТА -->
+        <section class="quote-section">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <p>
+                я как аркварден
+                разделю себя надвое 
+                чтобы защищать тебя с двух сторон
+                
+            </p>
+
+        </section>
+
+
+
+        <!-- 03 ИГРЫ -->
+        <section class="gallery-section">
+
+            <div class="section-number">
+                03 / НАШИ МОМЕНТЫ ИЗ ИГР
+            </div>
+
+            <h2>
+                и даже в играх
+                мы вместе умудряемся тупить и смеяться
+            </h2>
+
+            <div class="gallery">
+
+                <div class="image-wrapper">
+
+                    <img
+                        id="gamesImage"
+                        src="Игры/game1.jpg"
+                        alt="Наши игровые моменты"
+                    >
+
+                </div>
+
+                <div class="gallery-info">
+                    <span id="gamesCounter">
+                        01 / 05
+                    </span>
+                </div>
+
+                <div class="gallery-controls">
+
+                    <button onclick="previousPhoto('games')">
+                        ←
+                    </button>
+
+                    <div id="gamesDots" class="dots"></div>
+
+                    <button onclick="nextPhoto('games')">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 04 -->
+        <section class="text-section alternate">
+
+            <div class="section-number">
+                04 / ТО ЧТО Я ХОЧУ СКАЗАТЬ ТЕБЕ
+            </div>
+
+            <h2>
+                ты навсегда останешься самым важным человеком для меня
+            </h2>
+
+            <p>
+                я люблю тебя очень сильно машунь
+                я люблю тебя за все,просто за то что ты есть
+                я помню наши первые звонки,когда мы просто могли молчать
+                и смущаться,боясь сказать "я тебя люблю"
+                и как я скрывал тело,и ты по частицам собирала мой портрет
+                я помню когда я тебе признался впервые,и как боялся получить отказ
+                помню как скрывал свои чувства
+                я помню все,абсолютно
+                и это все я буду оберегать как ланая
+            </p>
+
+            <p>
+                я всегда буду любить тебя
+                какой бы ты ни была
+                без настроения,макияжа,заплаканная,агрессивная
+                я приму тебя любой,ведь это ТЫ 
+                I'll stand by you
+            </p>
+
+        </section>
+
+
+
+        <!-- 05 МЕМЫ -->
+        <section class="gallery-section">
+
+            <div class="section-number">
+                05 / НАШИ МЕМЫ
+            </div>
+
+            <h2>
+                наши мемы
+                с которых мы смеялись
+                а также милые картинки,которые у нас ассоциируются
+            </h2>
+
+            <div class="gallery">
+
+                <div class="image-wrapper">
+
+                    <img
+                        id="memesImage"
+                        src="Мемы/meme1.jpg"
+                        alt="Наши мемы"
+                    >
+
+                </div>
+
+                <div class="gallery-info">
+                    <span id="memesCounter">
+                        01 / 16
+                    </span>
+                </div>
+
+                <div class="gallery-controls">
+
+                    <button onclick="previousPhoto('memes')">
+                        ←
+                    </button>
+
+                    <div id="memesDots" class="dots"></div>
+
+                    <button onclick="nextPhoto('memes')">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 06 ФИНАЛ -->
+        <section class="final-section">
+
+            <div class="final-glow"></div>
+
+            <div class="final-content">
+
+                <div class="section-number">
+                    06 / СЛОВА КОТОРЫЕ Я БЫ ХОТЕЛ СКАЗАТЬ
+                </div>
+
+                <h2>
+                    с днем рождения
+                    машенька ❤️
+                </h2>
+
+                <p>
+                    я люблю тебя очень сильно
+                    и буду любить тебя всегда также
+                    спасибо тебе за то что ты есть
+                    за все моменты 
+                    за всю любовь
+                    за все разговоры
+                    воспоминания и ночные разговоры
+                    они согревают сильнее всего
+                    и эти воспоминания я всегда буду хранить
+                    спасибо тебе кисунь,за все
+                и главное помни
+                    я нажму haunt и всегда окажусь рядом с тобой
+                чтобы защитить тебя от обидчиков
+                    и нажму сандер,если тебе будет плохо
+                </p>
+
+                <div class="signature">
+                    Навеки твой кирюша 
+                    я всегда буду защищать и оберегать тебя
+                    мой любимый ангелочек
+                я нажму на твоих обидчиков requiem of souls
+                    чтобы каждый бежал в страхе
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

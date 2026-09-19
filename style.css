@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 183, 213, 0.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(60, 80, 180, 0.10),
+            transparent 30%
+        ),
+        #080910;
+
+    color: #f7f4f6;
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   ЧАСТИЦЫ
+========================= */
+
+#particles {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 10;
+}
+
+.particle {
+    position: absolute;
+
+    bottom: -30px;
+
+    color: #ffb7d5;
+
+    opacity: 0;
+
+    animation: floatParticle linear forwards;
+
+    text-shadow:
+        0 0 10px rgba(255, 183, 213, 0.7);
+}
+
+@keyframes floatParticle {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(80px)
+            rotate(180deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+.hero-glow {
+    position: absolute;
+
+    width: 650px;
+
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 183, 213, 0.15),
+            transparent 65%
+        );
+
+    filter: blur(20px);
+
+    animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 950px;
+}
+
+.small-title {
+    color: #ffb7d5;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-weight: 500;
+
+    font-size: clamp(50px, 8vw, 110px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #ffb7d5;
+}
+
+.hero-subtitle {
+    color: #b8b8c2;
+
+    font-size: 16px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   КНОПКА
+========================= */
+
+.main-button {
+    border: 1px solid rgba(255, 183, 213, 0.6);
+
+    background: rgba(255, 183, 213, 0.08);
+
+    color: white;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    backdrop-filter: blur(10px);
+}
+
+.main-button:hover {
+    background: #ffb7d5;
+
+    color: #080910;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 35px rgba(255, 183, 213, 0.25);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll-hint {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #777985;
+
+    font-size: 22px;
+
+    animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(8px);
+    }
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#mainContent {
+    display: none;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+#mainContent.visible {
+    display: block;
+}
+
+
+/* =========================
+   ТЕКСТ
+========================= */
+
+.text-section {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 150px 25px;
+}
+
+.text-section.alternate {
+    text-align: center;
+}
+
+.section-number {
+    color: #ffb7d5;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+
+    font-weight: 600;
+}
+
+.text-section h2,
+.gallery-section h2,
+.final-section h2 {
+    font-family: "Playfair Display", serif;
+
+    font-weight: 500;
+
+    font-size: clamp(38px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    margin-bottom: 35px;
+}
+
+.text-section p {
+    color: #b9bac4;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+
+    max-width: 720px;
+}
+
+.alternate p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   ГАЛЕРЕИ
+========================= */
+
+.gallery-section {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 100px 25px;
+}
+
+.gallery-section h2 {
+    max-width: 800px;
+}
+
+.gallery {
+    margin-top: 60px;
+}
+
+.image-wrapper {
+    width: 100%;
+
+    height: min(70vh, 700px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 183, 213, 0.02)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.35);
+}
+
+.image-wrapper img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    transition: opacity 0.3s ease;
+}
+
+.gallery-info {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 15px;
+
+    color: #777985;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   КНОПКИ ГАЛЕРЕИ
+========================= */
+
+.gallery-controls {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+.gallery-controls button {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 183, 213, 0.35);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.gallery-controls button:hover {
+    background: #ffb7d5;
+
+    color: #080910;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   ТОЧКИ
+========================= */
+
+.dots {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    max-width: 500px;
+
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #444651;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.dot.active {
+    width: 20px;
+
+    border-radius: 10px;
+
+    background: #ffb7d5;
+}
+
+
+/* =========================
+   ЦИТАТА
+========================= */
+
+.quote-section {
+    min-height: 50vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255, 183, 213, 0.035),
+            transparent
+        );
+}
+
+.quote-mark {
+    font-family: "Playfair Display", serif;
+
+    font-size: 100px;
+
+    color: #ffb7d5;
+
+    opacity: 0.6;
+
+    margin-bottom: 35px;
+}
+
+.quote-section p {
+    max-width: 800px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 4vw, 50px);
+
+    line-height: 1.2;
+
+    color: #eee;
+}
+
+
+/* =========================
+   ФИНАЛ
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    overflow: hidden;
+}
+
+.final-glow {
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 183, 213, 0.12),
+            transparent 65%
+        );
+
+    filter: blur(30px);
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+.final-content p {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    color: #b9bac4;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+.signature {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    color: #ffb7d5;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .small-title {
+        letter-spacing: 3px;
+    }
+
+    .text-section,
+    .gallery-section {
+        padding-top: 90px;
+
+        padding-bottom: 90px;
+    }
+
+    .image-wrapper {
+        height: 55vh;
+
+        border-radius: 18px;
+
+        padding: 8px;
+    }
+
+    .gallery-controls {
+        gap: 15px;
+    }
+
+    .dots {
+        max-width: 220px;
+    }
+
+    .dot {
+        width: 5px;
+
+        height: 5px;
+    }
+
+    .dot.active {
+        width: 15px;
+    }
+
+}
